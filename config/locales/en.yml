@@ -31,3 +31,17 @@
 
 en:
   hello: "Hello world"
+
+en:
+  view:
+    editing_book: 'Editing Book'
+    new_book: 'New Book'
+    books: 'Book'
+    title: 'Title'
+    memo: 'Memo'
+    author: 'Author'
+    picture: 'Picture'
+    edit: 'Edit'
+    back: 'Back'
+    show: 'Show'
+    destroy: 'Destroy'
