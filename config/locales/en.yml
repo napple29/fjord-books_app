@@ -31,12 +31,18 @@
 
 en:
   hello: "Hello world"
-
-en:
+  books:
+    create: 'Book was successfully created.'
+    update: 'Book was successfully updated.'
+    destroy: 'Book was successfully destroyed.'
+    index:
+      title: 'Book'
+    new:
+      title: 'New Book'
+    edit:
+      title: 'Editing Book'
   view:
-    editing_book: 'Editing Book'
     new_book: 'New Book'
-    books: 'Book'
     title: 'Title'
     memo: 'Memo'
     author: 'Author'
@@ -45,6 +51,3 @@ en:
     back: 'Back'
     show: 'Show'
     destroy: 'Destroy'
-    created: 'Book was successfully created.'
-    updated: 'Book was successfully updated.'
-    destroyed: 'Book was successfully destroyed.'

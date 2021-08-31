@@ -205,12 +205,18 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-
-ja:
+  books:
+    create: '本が作成されました'
+    update: '本が更新されました'
+    destroy: '本が削除されました'
+    index:
+      title: '本の一覧'
+    new:
+      title: '新規登録'
+    edit:
+      title: '本の編集'
   view:
-      editing_book: '本について'
       new_book: '新規登録'
-      books: '本の一覧'
       show: '表示'
       title: 'タイトル'
       memo: 'メモ'
@@ -220,6 +226,3 @@ ja:
       edit: '編集'
       back: '戻る'
       destroy: '削除'
-      created: '本が作成されました'
-      updated: '本が更新されました'
-      destroyed: '本が削除されました'
