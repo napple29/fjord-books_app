@@ -32,9 +32,10 @@
 en:
   hello: "Hello world"
   books:
-    create: 'Book was successfully created.'
-    update: 'Book was successfully updated.'
-    destroy: 'Book was successfully destroyed.'
+    flash_message: 'Book was successfully %{status}'
+    create: 'created.'
+    update: 'updated.'
+    destroy: 'destroyed.'
     index:
       title: 'Book'
     new:

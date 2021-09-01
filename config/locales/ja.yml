@@ -206,9 +206,10 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   books:
-    create: '本が作成されました'
-    update: '本が更新されました'
-    destroy: '本が削除されました'
+    flash_message: '本が%{status}されました'
+    update: '更新'
+    create: '作成'
+    destroy: '削除'
     index:
       title: '本の一覧'
     new:
