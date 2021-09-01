@@ -219,7 +219,8 @@ ja:
       next: 次
       last: 最後
       first: 最初
-      prev: 前
+      previous: 前
+      truncate: …
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
