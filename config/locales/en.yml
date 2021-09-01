@@ -44,10 +44,6 @@ en:
       title: 'Editing Book'
   view:
     new_book: 'New Book'
-    title: 'Title'
-    memo: 'Memo'
-    author: 'Author'
-    picture: 'Picture'
     edit: 'Edit'
     back: 'Back'
     show: 'Show'
