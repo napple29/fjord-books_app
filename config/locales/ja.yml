@@ -206,7 +206,8 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   books:
-    flash_message: '本が%{status}されました'
+    flash_message: '%{resource_name}が%{status}されました'
+    book: '本'
     update: '更新'
     create: '作成'
     destroy: '削除'

@@ -32,7 +32,8 @@
 en:
   hello: "Hello world"
   books:
-    flash_message: 'Book was successfully %{status}'
+    flash_message: '%{resource_name} was successfully %{status}'
+    book: 'Book'
     create: 'created.'
     update: 'updated.'
     destroy: 'destroyed.'
