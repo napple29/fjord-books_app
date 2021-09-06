@@ -126,6 +126,7 @@ ja:
         sign_up: アカウント登録
         edit_profile: 変更
         user_list: ユーザー一覧
+        detail: 詳細
         logout: ログアウト
       minimum_password_length: "（%{count}字以上）"
     unlocks:

@@ -12,14 +12,14 @@
 </p>
 
 <p>
-  <strong><%= Book.human_attribute_name(:author) %>:</strong>
-  <%= @book.author %>
+  <strong><%= User.human_attribute_name(:address) %>:</strong>
+  <%= @user.address %>
 </p>
 
 <p>
-  <strong><%= Book.human_attribute_name(:picture) %>:</strong>
-  <%= image_tag(@book.picture_url) if @book.picture.present? %>
+  <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
+  <%= @user.self_introduction %>
 </p>
 
-<%= link_to t('views.common.edit'), edit_book_path(@book) %> |
-<%= link_to t('views.common.back'), books_path %>
+<%= link_to t('views.common.edit') %> |
+<%= link_to t('views.common.back') %>
