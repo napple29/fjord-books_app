@@ -1,5 +1,4 @@
 <h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
 
 <table>
   <thead>
@@ -21,7 +20,7 @@
         <td><%= user.self_introduction %></td>
       </tr>
     <% end %>
-    <td><%= link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link' %></td>
+    <td><%= link_to t('users.shared.links.edit_profile'), edit_user_registration_path, class: 'navbar-link' %></td>
   </tbody>
 </table>
-<%= link_to "Back", :books %>
+<%= link_to t('devise.shared.links.back'), :books %>
