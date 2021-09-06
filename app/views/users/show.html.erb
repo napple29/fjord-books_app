@@ -1,2 +1,25 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:postal_code) %>:</strong>
+  <%= @user.postal_code %>
+</p>
+
+<p>
+  <strong><%= Book.human_attribute_name(:author) %>:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong><%= Book.human_attribute_name(:picture) %>:</strong>
+  <%= image_tag(@book.picture_url) if @book.picture.present? %>
+</p>
+
+<%= link_to t('views.common.edit'), edit_book_path(@book) %> |
+<%= link_to t('views.common.back'), books_path %>
