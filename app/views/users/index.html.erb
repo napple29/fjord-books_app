@@ -18,10 +18,10 @@
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
         <td><%= user.self_introduction %></td>
+        <td><%= link_to t('users.shared.links.detail'), users_show_path(user) %></td>
       </tr>
     <% end %>
     <td><%= link_to t('users.shared.links.edit_profile'), edit_user_registration_path, class: 'navbar-link' %></td>
   </tbody>
 </table>
-<%= link_to t('users.shared.links.detail'), users_show_path, class: 'navbar-link' %>
 <%= link_to t('devise.shared.links.back'), :books %>
