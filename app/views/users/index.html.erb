@@ -24,4 +24,5 @@
     <td><%= link_to t('users.shared.links.edit_profile'), edit_user_registration_path, class: 'navbar-link' %></td>
   </tbody>
 </table>
+<%= paginate @users %>
 <%= link_to t('devise.shared.links.back'), :books %>
