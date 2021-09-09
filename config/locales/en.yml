@@ -31,3 +31,21 @@
 
 en:
   hello: "Hello world"
+  books:
+    flash_message: '%{resource_name} was successfully %{status}'
+    book: 'Book'
+    create: 'created.'
+    update: 'updated.'
+    destroy: 'destroyed.'
+    index:
+      title: 'Book'
+    new:
+      title: 'New Book'
+    edit:
+      title: 'Editing Book'
+  view:
+    new_book: 'New Book'
+    edit: 'Edit'
+    back: 'Back'
+    show: 'Show'
+    destroy: 'Destroy'

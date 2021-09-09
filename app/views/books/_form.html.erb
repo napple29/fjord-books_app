@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= Book.human_attribute_name(:title) %></br>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :memo %>
+    <%= Book.human_attribute_name(:memo) %></br>
     <%= form.text_area :memo %>
   </div>
 
   <div class="field">
-    <%= form.label :author %>
+    <%= Book.human_attribute_name(:author) %></br>
     <%= form.text_field :author %>
   </div>
 
   <div class="field">
-    <%= form.label :picture %>
+    <%= Book.human_attribute_name(:picture) %></br>
     <%= form.file_field :picture %>
   </div>
 
