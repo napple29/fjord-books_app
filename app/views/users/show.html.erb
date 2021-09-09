@@ -1,5 +1,4 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= t('show.show')%></h1>
 
 <p>
   <strong><%= User.human_attribute_name(:email) %>:</strong>
@@ -21,5 +20,8 @@
   <%= @user.self_introduction %>
 </p>
 
-<%= link_to t('views.common.edit') %> |
-<%= link_to t('views.common.back') %>
+<% if @user.id == current_user.id %>
+<%= link_to t('views.common.edit_profile') , edit_user_registration_path %> |
+<% end %>
+
+<%= link_to t('views.common.back') , users_index_path %>
