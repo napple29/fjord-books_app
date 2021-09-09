@@ -5,15 +5,15 @@ class ApplicationController < ActionController::Base
   before_action :configure_account_update_parameters, if: :devise_controller?
 
   def configure_account_update_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:postal_code, :address, :self_introduction])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[postal_code address self_introduction])
   end
 
-  def after_sign_in_path_for(resource)
-    "/books"
+  def after_sign_in_path_for(_resource)
+    '/books'
   end
 
-  def after_sign_out_path_for(resource_or_scope)
-    "/users/sign_in"
+  def after_sign_out_path_for(_resource_or_scope)
+    '/users/sign_in'
   end
 
   protected
