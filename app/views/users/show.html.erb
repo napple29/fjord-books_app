@@ -33,6 +33,17 @@
   <% end %>
 </p>
 
+<% unless @user == current_user %>
+  <% if current_user.following?(@user) %>
+    <%= button_to t('button.unfollow'), relationship_path, method: :delete %>
+  <% else %>
+      <%= form_for(@user.followers.build) do |f| %>
+        <%= hidden_field_tag :follow_id, @user.id %>
+        <%= f.submit t('button.follow') %>
+      <% end %>
+    <% end %>
+<% end %>
+
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
