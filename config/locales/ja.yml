@@ -219,6 +219,8 @@ ja:
       user_list: ユーザー一覧
       logout: ログアウト
       logged_in_as: ログイン：
+      sign_up: サインアップ
+      login: ログイン
     pagination:
       first: '最初'
       last: '最後'

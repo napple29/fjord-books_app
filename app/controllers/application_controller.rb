@@ -1,19 +1,18 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :configure_account_update_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, :configure_account_update_parameters, if: :devise_controller?
 
   def configure_account_update_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: %i[postal_code address self_introduction])
   end
 
   def after_sign_in_path_for(_resource)
-    '/books'
+    books_path
   end
 
   def after_sign_out_path_for(_resource_or_scope)
-    '/users/sign_in'
+    sign_in_params
   end
 
   protected
@@ -23,8 +22,4 @@ class ApplicationController < ActionController::Base
   end
 
   before_action :authenticate_user!
-
-  before_action do
-    I18n.locale = :ja
-  end
 end
