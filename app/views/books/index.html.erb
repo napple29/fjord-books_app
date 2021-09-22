@@ -31,5 +31,15 @@
 <%= paginate @books %>
 
 <br>
-
+<p class="navbar-text pull-right">
+  <% if user_signed_in? %>
+    <%= t('views.common.logged_in_as') %><strong><%= current_user.email %></strong>.
+    <%= link_to t('views.common.edit_profile'), edit_user_registration_path, class: 'navbar-link' %> |
+    <%= link_to t('views.common.user_list'), users_path, class: 'navbar-link' %> |
+    <%= link_to t('views.common.logout'), destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+  <% else %>
+    <%= link_to t('views.common.sign_up'), new_user_registration_path, class: 'navbar-link'  %> |
+    <%= link_to t('views.common.login'), new_user_session_path, class: 'navbar-link'  %>
+  <% end %>
+</p>
 <%= link_to t('views.common.new'), new_book_path %>

@@ -1,0 +1,27 @@
+<h1><%= t('show.show')%></h1>
+
+<p>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:postal_code) %>:</strong>
+  <%= @user.postal_code %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:address) %>:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
+  <%= @user.self_introduction %>
+</p>
+
+<% if @user.id == current_user.id %>
+<%= link_to t('views.common.edit_profile') , edit_user_registration_path %> |
+<% end %>
+
+<%= link_to t('views.common.back') , users_path %>
