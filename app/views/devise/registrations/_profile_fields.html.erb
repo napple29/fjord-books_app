@@ -17,3 +17,9 @@
   <%= f.label :self_introduction %>
   <%= f.text_area :self_introduction %>
 </div>
+
+<div>
+  <%= f.label :avatar %>
+  <%= image_tag @user.avatar.variant(resize: "200x200") if @user.avatar.attached? %><br>
+  <%= f.file_field :avatar %>
+</div>
