@@ -1,0 +1,12 @@
+<tr>  
+  <td><%= image_tag @user.avatar.variant(resize_to_fill: [30, 30]) if @user.avatar.attached? %></td>
+  <td><%= t('views.common.followings', name: @user.name) %></td>
+</tr>
+</br>
+
+<tr>
+<% @user.following.each do |user| %>
+  <td><%= image_tag user.avatar.variant(resize_to_fill: [30, 30]) if user.avatar.attached? %></td>
+  <td><%= user.name %></br></td>
+</tr>
+<% end %>
