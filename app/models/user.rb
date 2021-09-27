@@ -6,12 +6,14 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  has_many :user_followings, class_name: "Relationship",
-            foreign_key: "follower_id",
-            dependent: :destroy
-  has_many :user_followers, class_name: "Relationship",
-            foreign_key: "following_id",
-            dependent: :destroy
+  has_many :user_followings, class_name: 'Relationship',
+                             foreign_key: 'follower_id',
+                             inverse_of: 'follower',
+                             dependent: :destroy
+  has_many :user_followers, class_name: 'Relationship',
+                            foreign_key: 'following_id',
+                            inverse_of: 'following',
+                            dependent: :destroy
   has_many :following, through: :user_followings, source: :following
   has_many :followers, through: :user_followers, source: :follower
 
