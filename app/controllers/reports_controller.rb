@@ -1,5 +1,4 @@
 class ReportsController < ApplicationController
-  before_action :signed_in?, only: [:edit, :update, :destroy]
   before_action :set_report, only: %i[show edit update destroy]
   def index
     @reports = Report.order(:id).page(params[:page])
@@ -18,7 +17,16 @@ class ReportsController < ApplicationController
   def show
     @report = Report.find(params[:id])
   end
-  
+
+  def edit
+    @report = Report.find(params[:id])
+    if @report.user_id == current_user.id
+      render "edit"
+    else
+      redirect_to reports_path
+    end
+  end
+
   def update
     @report.update(report_params)
     redirect_to report_path(@report.id)
@@ -39,4 +47,3 @@ class ReportsController < ApplicationController
     params.require(:report).permit(:id, :title, :content)
   end
 end
-
