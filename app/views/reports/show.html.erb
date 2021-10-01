@@ -10,7 +10,10 @@
   <%= @report.content %>
 </p>
 
-<%= render partial: "comments/index", locals: {commentable: @report} %>
+<% if @comment %>
+  <%= render partial: "comments/index", locals: {commentable: @report} %>
+<% end %>
+<%= render partial: "comments/new", locals: {commentable: @report} %>
 
 <p>
   <strong><%= Report.human_attribute_name(:created_at) %>:</strong>

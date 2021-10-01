@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to [@commentable, @comment], notice: 'Comment was successfully created.'
     else
-      render :new
+      render :_new
     end
   end
 
