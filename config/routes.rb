@@ -9,5 +9,7 @@ Rails.application.routes.draw do
       get :followings, :followers
     end
   end
-  resources :relationships, only: %i(create destroy)
+  resources :users do
+    resource :relationships, only: %i(create destroy)
+  end
 end
