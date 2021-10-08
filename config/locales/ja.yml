@@ -246,4 +246,8 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  attributes:
+    relationship:
+      error_message: "エラーが発生しました"
+    
 
