@@ -1,4 +1,32 @@
-<%= form_with(model: commentable) do |form| %>
-  <%= form.text_field :content %>
-  <%= form.submit %>
+<h1><%= Comment.model_name.human %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= Comment.human_attribute_name(:body) %></th>
+      <th><%= Report.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% commentable.comments.each do |comment| %>
+      <tr>
+        <td>名前</td>
+        <td><%= comment.body %></td>
+        <td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_with model: [commentable, Comment.new] do |form| %>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
