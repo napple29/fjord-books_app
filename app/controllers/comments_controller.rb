@@ -9,8 +9,8 @@ class CommentsController < ApplicationController
   # POST /comments
   def create
     @comment = @commentable.comments.new(comment_params)
+    @comment.user_id = current_user.id
     @comment.save
-    # @comment.user = current_user
     redirect_to @commentable
   end
 
