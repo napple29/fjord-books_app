@@ -12,7 +12,11 @@
   <tbody>
     <% commentable.comments.each do |comment| %>
       <tr>
-        <td><%= comment.user.name ||= comment.user.email %></td>
+        <td><%if comment.user.name.empty? %>
+              <%= comment.user.email %>
+            <% else %>
+              <%= comment.user.name %>
+            <% end %></td>
         <td><%= comment.body %></td>
         <td><%= comment.created_at.to_s(:datetime_jp) %></td>
       </tr>
