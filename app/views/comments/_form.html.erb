@@ -14,7 +14,7 @@
       <tr>
         <td><% if comment.user.nil? %>
               <%= '退会したユーザ' %>
-            <% elsif comment.user.name.brank? %>
+            <% elsif comment.user.name.blank? %>
               <%= comment.user.email %>
             <% else %>
               <%= comment.user.name %>

@@ -1,16 +1,11 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :set_commentable
-  # before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  # GET /comments
-  # def index
-  #   @comments = @commentable.comments
-  # end
 
-  # POST /comments
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user_id = current_user.id
-    # binding.irb
     @comment.save
     redirect_to @commentable
   end
