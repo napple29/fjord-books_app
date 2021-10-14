@@ -1,11 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   user: one
-#   title: MyString
-#   content: MyText
-
-# two:
-#   user: two
-#   title: MyString
-#   content: MyText
+report_1:
+  user_id: 642749254
+  title: lsコマンド3日目
+  content: ファイルを表示できた！
