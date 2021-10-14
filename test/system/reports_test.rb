@@ -1,8 +1,10 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   setup do
-    @report = reports(:report_1)
+    @report = reports(:report1)
 
     visit root_url
     fill_in 'Eメール', with: 'alice@example.com'
@@ -23,7 +25,7 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'editing the report' do
     visit reports_url
-  
+
     click_on '編集'
     fill_in 'タイトル', with: 'lsコマンド4日目'
     fill_in '内容', with: '３列表示難しい'

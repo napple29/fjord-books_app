@@ -3,7 +3,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-
   test '#following?' do
     users(:Alice).follow(users(:Bob))
     assert users(:Alice).following?(users(:Bob))
@@ -26,7 +25,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not users(:Alice).following?(users(:Bob))
   end
 
-  test "#name_or_email" do
+  test '#name_or_email' do
     user = User.new(email: 'foo@example.com', name: '')
     assert_equal 'foo@example.com', user.name_or_email
 
