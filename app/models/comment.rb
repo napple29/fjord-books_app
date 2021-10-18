@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :commentable, polymorphic: true
 
-  def self.comment_user_name(comment)
+  def comment_user_name(comment)
     if comment.user.nil?
       I18n.t('comment.withdrawal_user')
     elsif comment.user.name.blank?

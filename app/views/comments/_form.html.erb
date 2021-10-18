@@ -12,7 +12,7 @@
   <tbody>
     <% commentable.comments.each do |comment| %>
       <tr>
-        <td><%= Comment.comment_user_name(comment) %></td>
+        <td><%= comment.comment_user_name(comment) %></td>
         <td><%= comment.body %></td>
         <td><%= l comment.created_at, format: :long %></td>
       </tr>
