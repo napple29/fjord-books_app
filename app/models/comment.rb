@@ -5,10 +5,6 @@ class Comment < ApplicationRecord
   belongs_to :commentable, polymorphic: true
 
   def name_or_email(comment)
-    if comment.user.name.blank?
-      comment.user.email
-    else
-      comment.user.name
-    end
+    comment.user.name.presence || comment.user.email
   end
 end
