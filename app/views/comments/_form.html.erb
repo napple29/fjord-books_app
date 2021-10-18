@@ -14,7 +14,7 @@
       <tr>
         <td><%= Comment.comment_user_name(comment) %></td>
         <td><%= comment.body %></td>
-        <td><%= comment.created_at.to_s(:datetime_jp) %></td>
+        <td><%= l comment.created_at, format: :long %></td>
       </tr>
     <% end %>
   </tbody>
