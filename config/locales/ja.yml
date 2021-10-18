@@ -250,6 +250,8 @@ ja:
       notice: "フォローしました。"
     destroy:
       notice: "フォロー解除しました。"
+  comment:
+    withdrawal_user: 退会したユーザ
   # devise-i18n-viewsをオーバーライド
   devise:
     registrations:

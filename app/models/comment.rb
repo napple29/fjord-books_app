@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
 
   def self.comment_user_name(comment)
     if comment.user.nil?
-      '退会したユーザ'
+      I18n.t('comment.withdrawal_user')
     elsif comment.user.name.blank?
       comment.user.email
     else
