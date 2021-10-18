@@ -12,7 +12,11 @@
   <tbody>
     <% commentable.comments.each do |comment| %>
       <tr>
-        <td><%= comment.comment_user_name(comment) %></td>
+        <td><% if comment.user.nil? %>
+              <%=  t('views.common.withdrawal_user') %>
+            <% else %>
+              <%= comment.name_or_email(comment) %>
+            <% end %></td>
         <td><%= comment.body %></td>
         <td><%= l comment.created_at, format: :long %></td>
       </tr>
