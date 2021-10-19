@@ -1,15 +1,16 @@
 <table>
-  <tr>  
-    <th><%= image_tag @user.avatar.variant(resize_to_fill: [30, 30]) if @user.avatar.attached? %></th>
-    <th><%= t('views.common.followers', name: @user.name) %></th>
-  </tr>
-</table>
-
-<table>
-  <% @user.followers.each do |user| %>
-    <tr>
-      <td><%= image_tag user.avatar.variant(resize_to_fill: [30, 30]) if user.avatar.attached? %></td>
-      <td><%= user.name %></td>
+  <thead>
+    <tr>  
+      <th><%= image_tag @user.avatar.variant(resize_to_fill: [30, 30]) if @user.avatar.attached? %></th>
+      <th><%= t('views.common.followers', name: @user.name) %></th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @user.followers.each do |user| %>
+      <tr>
+        <td><%= image_tag user.avatar.variant(resize_to_fill: [30, 30]) if user.avatar.attached? %></td>
+        <td><%= user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
