@@ -4,25 +4,25 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test '#following?' do
-    users(:Alice).follow(users(:Bob))
-    assert users(:Alice).following?(users(:Bob))
+    users(:alice).follow(users(:bob))
+    assert users(:alice).following?(users(:bob))
   end
 
   test '#followed_by?' do
-    users(:Alice).follow(users(:Bob))
-    assert users(:Bob).followed_by?(users(:Alice))
+    users(:alice).follow(users(:bob))
+    assert users(:bob).followed_by?(users(:alice))
   end
 
   test '#follow' do
-    assert_not users(:Alice).following?(users(:Bob))
-    users(:Alice).follow(users(:Bob))
-    assert users(:Alice).following?(users(:Bob))
+    assert_not users(:alice).following?(users(:bob))
+    users(:alice).follow(users(:bob))
+    assert users(:alice).following?(users(:bob))
   end
 
   test '#unfollow' do
-    users(:Alice).follow(users(:Bob))
-    users(:Alice).unfollow(users(:Bob))
-    assert_not users(:Alice).following?(users(:Bob))
+    users(:alice).follow(users(:bob))
+    users(:alice).unfollow(users(:bob))
+    assert_not users(:alice).following?(users(:bob))
   end
 
   test '#name_or_email' do
