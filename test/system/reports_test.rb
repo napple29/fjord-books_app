@@ -45,9 +45,14 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'destroying the report' do
     visit reports_url
-
+    current_user = users(:alice)
+    assert_equal 1, current_user.reports.count
+    assert_text 'lsコマンド3日目'
     page.accept_confirm do
       click_on '削除'
     end
+
+    assert_no_text 'lsコマンド3日目'
+    assert_equal 0, current_user.reports.count
   end
 end
