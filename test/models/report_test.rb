@@ -4,12 +4,12 @@ require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
   test '#editable?' do
-    current_user = users(:alice)
-    report1 = current_user.reports.new
+    alice = users(:alice)
+    report1 = alice.reports.new
     assert report1.editable?(users(:alice))
 
-    current_user = users(:bob)
-    report2 = current_user.reports.new
+    bob = users(:bob)
+    report2 = bob.reports.new
     assert_not report2.editable?(users(:alice))
   end
 
