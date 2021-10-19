@@ -4,8 +4,6 @@ require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   setup do
-    @report = reports(:alice_report)
-
     visit root_url
     fill_in 'Eメール', with: 'alice@example.com'
     fill_in 'パスワード', with: 'password'
@@ -45,14 +43,14 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'destroying the report' do
     visit reports_url
-    current_user = users(:alice)
-    assert_equal 1, current_user.reports.count
+    alice = users(:alice)
+    assert_equal 1, alice.reports.count
     assert_text 'lsコマンド3日目'
     page.accept_confirm do
       click_on '削除'
     end
 
     assert_no_text 'lsコマンド3日目'
-    assert_equal 0, current_user.reports.count
+    assert_equal 0, alice.reports.count
   end
 end
