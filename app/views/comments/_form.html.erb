@@ -1,0 +1,36 @@
+<h1><%= Comment.model_name.human %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= Comment.human_attribute_name(:body) %></th>
+      <th><%= Comment.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% commentable.comments.each do |comment| %>
+      <tr>
+        <td><% if comment.user.nil? %>
+              <%=  t('views.common.withdrawal_user') %>
+            <% else %>
+              <%= comment.name_or_email(comment) %>
+            <% end %></td>
+        <td><%= comment.body %></td>
+        <td><%= l comment.created_at, format: :long %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_with model: [commentable, Comment.new] do |form| %>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_field :body, {required: true} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
