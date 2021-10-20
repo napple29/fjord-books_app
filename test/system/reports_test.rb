@@ -20,9 +20,7 @@ class ReportsTest < ApplicationSystemTestCase
     click_on '登録する'
     assert_text '日報が作成されました'
 
-    assert_text 'タイトル'
     assert_text 'lsコマンド3日目'
-    assert_text '内容'
     assert_text 'ファイルを表示できた！'
   end
 
@@ -35,9 +33,7 @@ class ReportsTest < ApplicationSystemTestCase
     click_on '更新する'
     assert_text '日報が更新されました'
 
-    assert_text 'タイトル'
     assert_text 'lsコマンド4日目'
-    assert_text '内容'
     assert_text '３列表示難しい'
   end
 
